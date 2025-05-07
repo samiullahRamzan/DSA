@@ -39,7 +39,6 @@ function merge(arr, start, mid, end) {
     j++;
   }
 
-  console.log("here is temporary array", temp);
   for (let index = 0; index < temp.length; index++) {
     arr[index + start] = temp[index];
   }
