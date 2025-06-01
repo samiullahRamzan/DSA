@@ -46,10 +46,16 @@ public class LinkedList {
     }
 
     public String LinkedListCenter(){
+
+        if(head==null){
+            System.out.println("List is empty!");
+            return "";
+        }
+
         Node s_pointer=head;
         Node f_pointer=head;
 
-        while(f_pointer.next!=null){
+        while(f_pointer.next != null && f_pointer.next.next != null){
             s_pointer=s_pointer.next;
             f_pointer=f_pointer.next.next;
         }
