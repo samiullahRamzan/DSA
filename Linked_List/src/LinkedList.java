@@ -42,6 +42,7 @@ public class LinkedList {
         }
 
         System.out.print("Null");
+        System.out.println();
     }
 
     public String LinkedListCenter(){

@@ -12,5 +12,7 @@ public class Main {
 
        LL.printList();
 
+       System.out.println("Here is linkedlist center:\t"+ LL.LinkedListCenter());
+
     }
 }
