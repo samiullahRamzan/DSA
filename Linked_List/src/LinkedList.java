@@ -61,7 +61,6 @@ public class LinkedList {
 
         return s_pointer.data;
     }
-
     public void deleteFirst(){
         if(head==null){
             System.out.println("List is empty");
@@ -69,7 +68,8 @@ public class LinkedList {
         }
 
         head=head.next;
-    }public void deleteLast(){
+    }
+    public void deleteLast(){
         if(head==null){
             System.out.println("List is empty");
             return;
@@ -124,4 +124,26 @@ public class LinkedList {
         System.out.println("Node with data '" + data + "' not found.");
 
     }
+
+    public void reverseList(){
+        if(head==null||head.next==null){
+            return;
+        }
+
+        Node prevNode=head;
+        Node currNode=head.next;
+
+        while(currNode!=null){
+            Node nextNode=currNode.next;
+            currNode.next=prevNode;
+
+            //update
+            prevNode=currNode;
+            currNode=nextNode;
+        }
+
+        head.next=null;
+        head=prevNode;
+    }
+
 }

@@ -5,11 +5,12 @@ public class Main {
        LinkedList LL=new LinkedList();
 
        LL.addLast("Now");
-        LL.addLast("i");
+       LL.addLast("i");
+       LL.addLast("am");
+       LL.addLast("at");
+       LL.addLast("Lahore");
        LL.printList();
-//       System.out.println("after deleting node");
-//       LL.deleteNode("ahmad");
-       LL.deleteLast();
+       LL.reverseList();
        LL.printList();
     }
 }
