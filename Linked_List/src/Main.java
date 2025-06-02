@@ -11,8 +11,8 @@ public class Main {
        LL.addLast("Lahore");
 
        LL.printList();
-
-       System.out.println("Here is linkedlist center:\t"+ LL.LinkedListCenter());
-
+       System.out.println("after deleting node");
+       LL.deleteNode("i");
+       LL.printList();
     }
 }

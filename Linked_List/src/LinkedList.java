@@ -52,8 +52,7 @@ public class LinkedList {
             return "";
         }
 
-        Node s_pointer=head;
-        Node f_pointer=head;
+        Node s_pointer=head,f_pointer=head;
 
         while(f_pointer.next != null && f_pointer.next.next != null){
             s_pointer=s_pointer.next;
@@ -61,5 +60,37 @@ public class LinkedList {
         }
 
         return s_pointer.data;
+    }
+
+    // delete node in linked list
+    public void deleteNode(String data){
+       // for list empty
+       if(head==null){
+           System.out.println("List is empty");
+           return;
+       }
+
+       // for single node in list
+       if(head.next==null && head.data.equals(data)){
+            head=null;
+            return;
+       }
+
+
+        // Case 3: Head node is the one to be deleted
+        if (head.data.equals(data)) {
+            head = head.next;
+            return;
+        }
+       Node prevNode=head;
+       Node currNode=head.next;
+       while(currNode!=null){
+           if(currNode.data.equals(data)){
+               prevNode.next=currNode.next;
+               return;
+           }
+           prevNode=currNode;
+           currNode=currNode.next;
+       }
     }
 }
