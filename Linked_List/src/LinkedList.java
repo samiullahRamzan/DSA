@@ -146,4 +146,41 @@ public class LinkedList {
         head=prevNode;
     }
 
+    public void Delete_M_After_N(int N,int M){
+        if(head==null){
+            System.out.println("List is empty!");
+            return;
+        }
+        Node curr=head;
+        Node prev=null;
+
+        while(curr!=null){
+
+            for(int i=0;i<N&&curr!=null;i++){
+                prev=curr;
+                curr=curr.next;
+            }
+
+            if(curr==null){
+                return;
+            }
+
+            for(int i=0;i<M&&curr!=null;i++){
+                curr=curr.next;
+            }
+
+
+            // Link the last non-deleted node to the current node after skipping N nodes
+            if (prev != null) {
+                prev.next = curr;
+            }
+
+            // Move prev to the current node (after deletion)
+            if (curr != null) {
+                prev = curr;
+            }
+
+        }
+    }
+
 }
