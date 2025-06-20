@@ -1,6 +1,44 @@
 public class LinkedList {
     Node head;
 
+
+    public void addCycleAtStart(){
+        if (head == null) {
+            System.out.println("List is empty. Cannot create a cycle.");
+            return;
+        }
+        Node currNode=head;
+
+        while(currNode.next!=null){
+            currNode=currNode.next;
+        }
+        currNode.next=head;
+    }
+
+    public void addCycleAtMidNode() {
+        if (head == null) {
+            System.out.println("List is empty. Cannot create a cycle.");
+            return;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        // Use the slow and fast pointer approach to find the middle node
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // Now slow is at the middle node, let's create the cycle
+        Node curr = head;
+        while (curr.next != null) {
+            curr = curr.next;
+        }
+
+        // Connect the last node to the middle node to create a cycle
+        curr.next = slow;
+    }
     public void addFirst(String data){
         Node newNode=new Node(data);
 
@@ -183,4 +221,32 @@ public class LinkedList {
         }
     }
 
+    public Node RemoveCycle(){
+        Node slow=head;
+        Node fast=head;
+
+        boolean isCycle=false;
+        // fast!=null&&fast.next!=null ----- for even and odd node
+        while(fast!=null&&fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+
+            if(slow==fast){
+                isCycle=true;
+            }
+        }
+
+        if(isCycle){
+            return null;
+        }
+
+        slow=head;
+
+        while(slow!=fast){
+            slow=slow.next;
+            fast=fast.next;
+        }
+
+        return slow;
+    }
 }
