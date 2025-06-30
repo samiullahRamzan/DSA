@@ -1,4 +1,3 @@
-
 function FizzBuzz(n){
    let result=[];
 
