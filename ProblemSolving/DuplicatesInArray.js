@@ -1,15 +1,12 @@
-const input_array = [1, 2, 3, 4, 1, 1, 5, 1, 2, 3];
+const input_array = [1, 2, 3, 4, 1, 1, 5, 1, 2, 3,5];
 
 function findDuplicates(arr) {
-  const duplicates = [];
+  const duplicates = new Set();
   for (let i = 0; i < arr.length; i++) {
-    if (elementExists(duplicates, arr[i])) {
-      continue;
-    }
-
+  
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] === arr[j]) {
-        duplicates.push(arr[i]);
+        duplicates.add(arr[i]);
         break;
       }
     }
