@@ -18,7 +18,7 @@ function fibonacci(n){
 }
 
 // 0,1,1,2,3,5,8,
-console.log('here is fibonacci value:',fibonacci(0))
+console.log('here is fibonacci value:',fibonacci(100))
 
 function fibonacci_Recursive(n){
     if(n==0||n==1){
@@ -28,4 +28,8 @@ function fibonacci_Recursive(n){
     return fibonacci_Recursive(n-1)+fibonacci_Recursive(n-2);
 }
 // parameter is index value 
-console.log("here is fibonacci recursive value:",fibonacci_Recursive(6));
+//console.log("here is fibonacci recursive value:",fibonacci_Recursive(10));
+
+// very costly operation
+//console.log("here is fibonacci recursive value:",fibonacci_Recursive(50));
+// console.log("here is fibonacci recursive value:",fibonacci_Recursive(100));
