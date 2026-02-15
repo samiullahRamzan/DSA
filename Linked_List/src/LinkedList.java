@@ -226,6 +226,7 @@ public class LinkedList {
         Node fast=head;
 
         boolean isCycle=false;
+//      detect cycle in linked list
         // fast!=null&&fast.next!=null ----- for even and odd node
         while(fast!=null&&fast.next!=null){
             slow=slow.next;
@@ -233,20 +234,25 @@ public class LinkedList {
 
             if(slow==fast){
                 isCycle=true;
+                break;
             }
         }
 
-        if(isCycle){
+        if(!isCycle){
             return null;
         }
 
+//      find out starting point of cycle..
         slow=head;
-
+        Node prev=null;
         while(slow!=fast){
             slow=slow.next;
+            prev=fast;
             fast=fast.next;
         }
 
-        return slow;
+        prev.next=null; // remove cycle from list..
+
+        return slow;  // here is a starting point
     }
 }
