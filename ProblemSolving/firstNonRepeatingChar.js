@@ -83,25 +83,50 @@
 // console.log(firstNonRepeatingCharArray("aabbcc")); // null
 
 
-function FindNonRepeatingCustom(str) {
-  for (let i = 0; i < str.length; i++) {
-    let isRepeating = false;
+// function FindNonRepeatingCustom(str) {
+//   for (let i = 0; i < str.length; i++) {
+//     let isRepeating = false;
 
-    for (let j = 0; j < str.length; j++) {
-      if (i !== j && str[i] === str[j]) {
-        isRepeating = true;
-        break; 
-      }
-    }
+//     for (let j = 0; j < str.length; j++) {
+//       if (i !== j && str[i] === str[j]) {
+//         isRepeating = true;
+//         break; 
+//       }
+//     }
 
-    if (!isRepeating) {
-      return str[i]; 
+//     if (!isRepeating) {
+//       return str[i]; 
+//     }
+//   }
+
+//   return null; 
+// }
+
+// console.log('First non-repeating character:', FindNonRepeatingCustom('swiss')); 
+
+
+//  str='aabbaaccddf';
+//  char='f';
+
+// optimal answer using object in javascript..
+function FindFirstNonRepeatingCharUsingObject(str){
+
+  let count={};
+  
+  for(let char of str){
+    count[char]=(count[char] || 0) + 1;
+  }
+
+  for(let char of str){
+    if(count[char]==1){
+       return char;
     }
   }
 
-  return null; 
+  return -1;
+
 }
 
-console.log('First non-repeating character:', FindNonRepeatingCustom('swiss')); 
+console.log('here is first non repeating char..',FindFirstNonRepeatingCharUsingObject('aabbaaccdf'));
 
 
