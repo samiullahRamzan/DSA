@@ -1,19 +1,19 @@
 
-const arr=[1,2,3,4,5,6,7,8,9];
+const arr=[1,2,3,4,5,6,7,8];
 let start=0;
 let mid;
 let temp;
 
 mid=Math.ceil(arr.length/2);
 
-// while(mid!=arr.length){
-//     temp=arr[start];
-//     arr[start]=arr[mid];
-//     arr[mid]=temp;
+while(mid!=arr.length){
+    temp=arr[start];
+    arr[start]=arr[mid];
+    arr[mid]=temp;
     
-//     start++;
-//     mid++;
-// }
+    start++;
+    mid++;
+}
 
 // in javascript there is another method to do that
 // for (let i = 0; i < Math.floor(arr.length / 2); i++) {
