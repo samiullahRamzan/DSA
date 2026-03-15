@@ -10,16 +10,13 @@ const isLetterOrNumber = (char) => {
 };
 
 const ReverseString = () => {
-  // Convert string to array
-  let arr = input_str.split("");
 
-  // Initialize two pointers
+  let arr = input_str.split("");
   let left = 0;
   let right = arr.length - 1;
 
   while (left < right) {
     if (isLetterOrNumber(arr[left]) && isLetterOrNumber(arr[right])) {
-      // Swap characters
       let temp = arr[left];
       arr[left] = arr[right];
       arr[right] = temp;
@@ -33,7 +30,6 @@ const ReverseString = () => {
     }
   }
 
-  // Join array back into a string
   return arr.join("");
 };
 
