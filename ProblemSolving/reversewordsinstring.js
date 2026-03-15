@@ -65,3 +65,66 @@ var reverseWords = function(s) {
 
     return reverseWordsinstr.trim();
 };
+
+
+// by sharadha didi
+var reverseWords1 = function(s) {
+
+    s = reverseString(s);   
+    let word='';
+    let reverseWordsinstr='';
+
+    for(let i=0;i<s.length;i++){
+
+       while(i< s.length && s[i] != ' '){
+          word+=s[i];
+          i++
+       }
+
+      word=reverseString(word);
+
+       if(word.length> 0){
+        reverseWordsinstr+=" " + word;
+        word='';
+       }
+
+
+    }
+
+    return reverseWordsinstr.substring(1);
+};
+
+
+console.log('here is reverse word...',reverseWords1('the sky is blue'))
+
+
+
+// another by sharadha didi...
+
+// #include <string>
+// #include <algorithm>
+// using namespace std;
+
+// string reverseWords(string s) {
+//     int n = s.length();
+//     string ans = "";
+
+//     reverse(s.begin(), s.end());
+
+//     for (int i = 0; i < n; i++) {
+//         string word = "";
+
+//         while (i < n && s[i] != ' ') {
+//             word += s[i];
+//             i++;
+//         }
+
+//         reverse(word.begin(), word.end());
+
+//         if (word.length() > 0) {
+//             ans += " " + word;
+//         }
+//     }
+
+//     return ans.substr(1);
+// }
